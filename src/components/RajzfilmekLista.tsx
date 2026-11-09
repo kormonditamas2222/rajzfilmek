@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { type Rajzfilm } from "../types/Rajzfilm";
+import { Rajzfilmek } from "./Rajzfilmek";
 
 export function RajzfilmekLista() {
     const [rajzfilmek, setRajzfilmek] = useState<Rajzfilm[]>([]);
@@ -42,7 +43,15 @@ export function RajzfilmekLista() {
                 <li className="list-group-item"><b>Legkorábban megjelent rajzfilm: </b> {legkorabbi}</li>
                 <li className="list-group-item"><b>Legkésőbb megjelent rajzfilm: </b> {legkesobbi}</li>              
             </ul>
-            
+            <div className="row">
+                {
+                    rajzfilmek.map(rajzfilm => (
+                        <div className="col-sm-4">
+                            <Rajzfilmek key={rajzfilm.id} getRajzfilm={rajzfilm}/>
+                        </div>
+                    ))
+                }
+            </div>
         </>
     )
 }
