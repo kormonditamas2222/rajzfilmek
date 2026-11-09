@@ -9,7 +9,7 @@ export function Rajzfilmek(props: rajzfilmProps) {
     const [datumMegjelenitve, setMegjelenes] = useState(true);
     return (
         <>
-            <section className="card">
+            <section className="card mb-4 p-3">
                 <h2 className="card-title">{props.getRajzfilm.cim}</h2>
                 <p className="card-text"><i>{props.getRajzfilm.studio}</i></p>
                 <p className="card-text">
